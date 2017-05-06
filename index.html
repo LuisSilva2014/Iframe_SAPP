@@ -50,7 +50,7 @@
 			url: 'http://centralizer.sigame.co/api/Test_SAPP',
 			timeout: 3000,
 			success: function (data) {
-			 		//alert(JSON.stringify(data));
+				    console.log(JSON.stringify(data));
 					$("#PosIframe").append(iframe);
 					setTimeout(function () {
 							$(".se-pre-conPpal").fadeOut("slow");
@@ -58,6 +58,8 @@
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
 				//alert("Revisa tu conexión: Por ahora internet y el aplicativo no se entienden");
+			 	console.log("Revisa tu conexión: Por ahora internet y el aplicativo no se entienden");
+				
 					$("body").css("background","#2196F3");
 					setTimeout(function () {
 							$(".se-pre-conPpal").fadeOut("slow");
