@@ -42,13 +42,14 @@
 			+'</iframe>'
 		+'</div>';
 
-		var MError ='<div style="text-align:center"><br><br><h3>Revisa tu conexión</h3>Por ahora internet y el aplicativo no se entienden <br>vuelve a intentar más tarde <br> <br><img  style=" width: 90%;" src="Img/dribbblebroco.gif" alt="" > <a href="javascript:window.location.reload(true)" style="color:white">Refrescar Conexión </a></div>';
+		var MError ='<div style="text-align:center"><br><h2>Revisa tu conexión</h2>Por ahora internet y el aplicativo no se entienden <br>vuelve a intentar más tarde <br><a href="javascript:window.location.reload(true)" style="color:white">Refrescar Conexión </a><br><img  style=" width: 90%;max-width:300px;" src="Img/dribbblebroco.gif" alt="" > <br> </div>';
 
 		$.ajax({
 			type: 'GET',
 			url: 'http://centralizer.sigame.co/api/Test_SAPP',
-			timeout: 4000,
+			timeout: 3000,
 			success: function (data) {
+			 		alert(JSON.stringify(data));
 					$("#PosIframe").append(iframe);
 					setTimeout(function () {
 							$(".se-pre-conPpal").fadeOut("slow");
