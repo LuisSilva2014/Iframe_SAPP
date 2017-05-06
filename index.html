@@ -25,13 +25,24 @@
 		}
 	</style>
 	<script>
+
+	var iframe=
+		'<div>'
+		+'<iframe src="http://centralizer.sigame.co/Account/Companies_teamsigame" style="'
+		+'	        width: 102%;position: absolute; height: 100%; border: none;'
+		+'			margin-left: -9px;'
+		+'			margin-top: -2px;">'
+		+'</iframe>'
+	+'</div>';
 		$.ajax({
 			type: 'GET',
 			url: 'http://centralizer.sigame.co/api/Test_SAPP',
 			timeout: 2000,
 			success: function (data) {
+				  $("#PosIframe").append(iframe);
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				alert("Por ahora internet y el aplicativo no se entienden");
 				setTimeout(function () {
 					swal({
 						title: 'Revisa tu conexión',
@@ -63,18 +74,17 @@
                 $(".se-pre-conPpal").hide();
             }, 3200);
         }); 
+
+	
+
+
+
 	</script>
 </head>
 
 <body>
 	<div class="se-pre-conPpal"></div>
-	<div>
-		<iframe src="http://centralizer.sigame.co/Account/Companies_teamsigame" style="
-			        width: 102%;position: absolute; height: 100%; border: none;
-					margin-left: -9px;
-					margin-top: -2px;">
-		</iframe>
-	</div>
+	<div id="PosIframe"></div>
 </body>
 
 </html>
