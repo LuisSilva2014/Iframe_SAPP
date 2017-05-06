@@ -14,6 +14,13 @@
 			margin-top: 1px !important;
 		}
 		
+		html {
+			line-height: 1.5;
+			font-family: "Roboto", sans-serif;
+			font-weight: normal;
+			color: white;
+		}
+
 		.se-pre-conPpal {
 			position: fixed;
 			left: 0px;
@@ -34,16 +41,28 @@
 		+'			margin-top: -2px;">'
 		+'</iframe>'
 	+'</div>';
+
+	var MError ='<div style="text-align:center"><br><br><h3>Revisa tu conexión</h3>Por ahora internet y el aplicativo no se entienden <br>vuelve a intentar más tarde <br> <br><img  style=" width: 90%;" src="Img/dribbblebroco.gif" alt="" > <a href="javascript:window.location.reload(true)" style="color:white">Refrescar Conexión </a></div>';
+
+
 		$.ajax({
 			type: 'GET',
 			url: 'http://centralizer.sigame.co/api/Test_SAPP',
-			timeout: 2000,
+			timeout: 4000,
 			success: function (data) {
 				  $("#PosIframe").append(iframe);
+
+				   setTimeout(function () {
+						 $(".se-pre-conPpal").fadeOut("slow");
+				   }, 500);
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
 				alert("Revisa tu conexión: Por ahora internet y el aplicativo no se entienden");
-				$("#PosIframe").append('<b>Revisa tu conexión</b><br><br>Por ahora internet y el aplicativo no se entienden. Cierra el app y vuelve a intentar más tarde <br> <br><img  style=" width: 77%;" src="Img/dribbblebroco.gif" alt="">');
+				   $("body").css("background","#2196F3");
+				   setTimeout(function () {
+						 $(".se-pre-conPpal").fadeOut("slow");
+				   }, 900);
+			    	$("#PosIframe").append(MError);
 				// setTimeout(function () {
 				// 	swal({
 				// 		title: 'Revisa tu conexión',
@@ -69,11 +88,11 @@
 
 		})
 
-	    $(window).load(function () {
-            setTimeout(function () {
-                $(".se-pre-conPpal").hide();
-            }, 3200);
-        }); 
+	    // $(window).load(function () {
+        //     setTimeout(function () {
+        //         $(".se-pre-conPpal").hide();
+        //     }, 3200);
+        // }); 
 
 	</script>
 </head>
