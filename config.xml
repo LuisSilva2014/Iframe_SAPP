@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 	
 	<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.xx.xx" version="1.1.2">
-    <name>TEAM SIGAME</name>
+    <name>TEAM SIGAME APPS</name>
     <description>
-       Control de acceso a los aplicativos soportados y desarrollados por TEAM SIGAME
+       Control de acceso a los aplicativo TEAM SIGAME. Desarrollados y soportados por wwww.silva-solutions.com | Ing. Luis Silva
     </description>
     <author email="info@silva-solutions.com" href="http://silva-solutions.com">
          Ing. Luis Silva | silva-solutions.com
