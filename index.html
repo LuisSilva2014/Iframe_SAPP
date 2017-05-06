@@ -42,29 +42,29 @@
 				  $("#PosIframe").append(iframe);
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
-				alert("Por ahora internet y el aplicativo no se entienden");
-				setTimeout(function () {
-					swal({
-						title: 'Revisa tu conexión',
-						type: 'warning',
-						html:
-						'Por ahora internet y el aplicativo no se entienden <br> <br><img  style=" width: 77%;" src="Img/dribbblebroco.gif" alt="">',
-						showCloseButton: true,
-						confirmButtonText:
-						'Refrescar'
-					}).then(function () {
-								setTimeout(function () {
-									location.reload();
-								}, 2000);
-					}, function (dismiss) {
-						// dismiss can be 'cancel', 'overlay', 'close', and 'timer'
-						//if (dismiss === 'overlay') {
-							setTimeout(function () {
-								location.reload();
-							}, 1000);
-						//}
-					})
-				}, 1500);
+				alert("Revisa tu conexión: Por ahora internet y el aplicativo no se entienden");
+				$("#PosIframe").append('<b>Revisa tu conexión</b><br><br>Por ahora internet y el aplicativo no se entienden. Cierra el app y vuelve a intentar más tarde <br> <br><img  style=" width: 77%;" src="Img/dribbblebroco.gif" alt="">');
+				// setTimeout(function () {
+				// 	swal({
+				// 		title: 'Revisa tu conexión',
+				// 		type: 'warning',
+				// 		html:
+				// 		'Por ahora internet y el aplicativo no se entienden <br> <br><img  style=" width: 77%;" src="Img/dribbblebroco.gif" alt="">',
+				// 		showCloseButton: true,
+				// 		confirmButtonText:
+				// 		'Refrescar'
+				// 	}).then(function () {
+				// 				setTimeout(function () {
+				// 					location.reload();
+				// 				}, 2000);
+				// 	}, function (dismiss) {
+				// 		// dismiss can be 'cancel', 'overlay', 'close', and 'timer'
+				// 		//if (dismiss === 'overlay') {
+				// 			setTimeout(function () {
+				// 				location.reload();
+				// 			}, 500);
+				// 		//}
+  //				}, 1000);
 			}
 
 		})
@@ -74,10 +74,6 @@
                 $(".se-pre-conPpal").hide();
             }, 3200);
         }); 
-
-	
-
-
 
 	</script>
 </head>
