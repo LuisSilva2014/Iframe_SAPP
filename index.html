@@ -11,7 +11,7 @@
 	<title>Index</title>
 	<style>
 		body {
-			margin-top: 1px !important;
+			margin-top: 0px !important;
 		}
 		
 		html {
@@ -33,67 +33,36 @@
 	</style>
 	<script>
 
-	var iframe=
-		'<div>'
-		+'<iframe src="http://centralizer.sigame.co/Account/Companies_teamsigame" style="'
-		+'	        width: 102%;position: absolute; height: 100%; border: none;'
-		+'			margin-left: -9px;'
-		+'			margin-top: -2px;">'
-		+'</iframe>'
-	+'</div>';
+		var iframe=
+			'<div>'
+			+'<iframe src="http://centralizer.sigame.co/Account/Companies_teamsigame" style="'
+			+'	        width: 102%;position: absolute; height: 100%; border: none;'
+			+'			margin-left: -9px;'
+			+'			margin-top: -2px;">'
+			+'</iframe>'
+		+'</div>';
 
-	var MError ='<div style="text-align:center"><br><br><h3>Revisa tu conexión</h3>Por ahora internet y el aplicativo no se entienden <br>vuelve a intentar más tarde <br> <br><img  style=" width: 90%;" src="Img/dribbblebroco.gif" alt="" > <a href="javascript:window.location.reload(true)" style="color:white">Refrescar Conexión </a></div>';
-
+		var MError ='<div style="text-align:center"><br><br><h3>Revisa tu conexión</h3>Por ahora internet y el aplicativo no se entienden <br>vuelve a intentar más tarde <br> <br><img  style=" width: 90%;" src="Img/dribbblebroco.gif" alt="" > <a href="javascript:window.location.reload(true)" style="color:white">Refrescar Conexión </a></div>';
 
 		$.ajax({
 			type: 'GET',
 			url: 'http://centralizer.sigame.co/api/Test_SAPP',
 			timeout: 4000,
 			success: function (data) {
-				  $("#PosIframe").append(iframe);
-
-				   setTimeout(function () {
-						 $(".se-pre-conPpal").fadeOut("slow");
-				   }, 500);
+					$("#PosIframe").append(iframe);
+					setTimeout(function () {
+							$(".se-pre-conPpal").fadeOut("slow");
+					}, 1000);
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
 				alert("Revisa tu conexión: Por ahora internet y el aplicativo no se entienden");
-				   $("body").css("background","#2196F3");
-				   setTimeout(function () {
-						 $(".se-pre-conPpal").fadeOut("slow");
-				   }, 900);
-			    	$("#PosIframe").append(MError);
-				// setTimeout(function () {
-				// 	swal({
-				// 		title: 'Revisa tu conexión',
-				// 		type: 'warning',
-				// 		html:
-				// 		'Por ahora internet y el aplicativo no se entienden <br> <br><img  style=" width: 77%;" src="Img/dribbblebroco.gif" alt="">',
-				// 		showCloseButton: true,
-				// 		confirmButtonText:
-				// 		'Refrescar'
-				// 	}).then(function () {
-				// 				setTimeout(function () {
-				// 					location.reload();
-				// 				}, 2000);
-				// 	}, function (dismiss) {
-				// 		// dismiss can be 'cancel', 'overlay', 'close', and 'timer'
-				// 		//if (dismiss === 'overlay') {
-				// 			setTimeout(function () {
-				// 				location.reload();
-				// 			}, 500);
-				// 		//}
-  //				}, 1000);
+					$("body").css("background","#2196F3");
+					setTimeout(function () {
+							$(".se-pre-conPpal").fadeOut("slow");
+					}, 900);
+					$("#PosIframe").append(MError);
 			}
-
 		})
-
-	    // $(window).load(function () {
-        //     setTimeout(function () {
-        //         $(".se-pre-conPpal").hide();
-        //     }, 3200);
-        // }); 
-
 	</script>
 </head>
 
